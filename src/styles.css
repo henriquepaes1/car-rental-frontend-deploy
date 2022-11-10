@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+.top-bar{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    color: #ffffff;
+    background-color: #003b73;
+  }
+
+  .thick {
+    font-weight: bold;
+  }
+  
+  .top-bar-item{
+    cursor: pointer;
+  }
+  
+  .background{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #0074b7;
+  }
+  
+  .custom-content{
+    z-index: 1;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+  }
+  
+  .custom-container{
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #3D3D3D;
+    background-color: #ffffff;
+  }

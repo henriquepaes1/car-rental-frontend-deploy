@@ -1,0 +1,48 @@
+<div class="custom-container">
+    <div class="">
+        <div class="form-group">
+            <div class="row">
+                <input type="search" name="address" id="pick_up_address_input_id" class="form-control" placeholder="Where do you want to pick up your car?">
+            </div>
+            <div class="row form-check">
+                <input type="checkbox" class="form-check-input" name="return_to_origin" value="return" id="return_to_origin_location_checkbox_input_id">
+                <label for="return_to_origin_location_checkbox_input_id">Return to the same location</label>
+            </div>
+        </div>
+    </div>    
+</div>
+<br>
+<div class="form-row">
+    <div class="custom-container col-xl-6 col-sm-12">
+        <input type="text" name="daterange" value="" />
+    </div>
+    <div class="custom-container col-xl-6 col-sm-12">
+        <div class="">
+            <div class="form-group">
+                <label class="form-label thick"> Vehicle Types: </label>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="vehicle_types" id="vehicle_type_luxury" value="luxury">
+                        <label for="vehicle_type_luxury" class="form-check-label thick">Luxury</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="vehicle_types" id="vehicle_type_premium" value="premium">
+                        <label for="vehicle_type_premium" class="form-check-label thick">Premium</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="vehicle_types" id="vehicle_type_economy" value="economy">
+                        <label for="vehicle_type_economy" class="form-check-label thick">Economy</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="vehicle_types" id="vehycle_type_supereconomy" value="super_economy">
+                        <label for="vehycle_type_supereconomy" class="form-check-label thick">Super Economy</label>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<br>
+<a class="btn btn-primary btn-lg btn-block" href="/list">
+    SEARCH
+</a>
