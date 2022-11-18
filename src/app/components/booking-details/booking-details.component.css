@@ -179,10 +179,11 @@ margin-right: 10%;
     color: #615c5c;
     margin-top: 0%;
     margin-bottom: 0%;
+    justify-content: space-between;
 }
 
 #no-margin-flex{
-    margin: 0px;
+    margin-right: 100px;
     display: flex;
     justify-content: flex-start;
     gap: 50%;
@@ -192,6 +193,7 @@ margin-right: 10%;
 }
 #offer-info{
     margin-bottom: 15%;
+    justify-content: space-between;
 }
 
 #first-half{

@@ -41,28 +41,28 @@
               <p id="secure-text">Car Protection</p>
               <p>$10/day</p>
             </div>
-            <input type="checkbox" id="checkbox">
+            <input type="checkbox" (click)="updateStatus()" id="checkbox" name="car-protection">
           </div>
           <div id="extra-checks">
             <div id="check-text">
-              <p id="secure-text">Full Protection</p>
+              <p id="secure-text" >Full Protection</p>
               <p>$20/day</p>
             </div>  
-            <input type="checkbox" id="checkbox">        
+            <input type="checkbox" id="checkbox" (click)="updateStatus()" name="full-protection">        
           </div>
           <div id="extra-checks">
             <div id="check-text">
               <p id="secure-text">Third Party Protection</p>
               <p>$5/day</p>
             </div>
-            <input type="checkbox" id="checkbox">          
+            <input type="checkbox" id="checkbox" (click)="updateStatus()" name="tp-protection">          
           </div>
           <div id="extra-checks">
             <div id="check-text">
               <p id="secure-text">Glass Protection</p>
               <p>$2/day</p>
             </div> 
-            <input type="checkbox" id="checkbox">         
+            <input type="checkbox" id="checkbox" (click)="updateStatus()" name="glass-protection">         
           </div>
 
         </div>
@@ -87,27 +87,36 @@
                   <div id="flex-column">
                     <div id="offer-info">
                       <p id="texto-claro2">Daily</p>
-                      <p id="texto-claro2">7 x $200</p>
+                      <p id="texto-claro2">{{bookingDuration}} x ${{carRent}}</p>
                     </div>
-                    <div id="offer-info">
+                    <div id="offer-info" *ngIf="extras">
                       <p id="texto-claro2">Extras</p>
                     </div>
-                    <div id="offer-info">
+                    <div id="offer-info" *ngIf="carProtection">
                       <p id="texto-claro2">Car protection</p>
-                      <p id="texto-claro2">7 nights x $10</p>
+                      <p id="texto-claro2">{{bookingDuration}} nights x $10</p>
+                    </div>
+                    <div id="offer-info" *ngIf="fullProtection">
+                      <p id="texto-claro2">Full protection</p>
+                      <p id="texto-claro2">{{bookingDuration}} nights x $10</p>
+                    </div>
+                    <div id="offer-info" *ngIf="tpProtection">
+                      <p id="texto-claro2">Third Party protection</p>
+                      <p id="texto-claro2">{{bookingDuration}} nights x $10</p>
+                    </div>
+                    <div id="offer-info" *ngIf="glassProtection">
+                      <p id="texto-claro2">Glass protection</p>
+                      <p id="texto-claro2">{{bookingDuration}} nights x $10</p>
                     </div>
                   </div>
                   <div id="flex-column">
                     <div id="offer-info">
                       <p id="texto-claro2">Total</p>
-                      <p id="texto-claro2">$1400</p>
+                      <p id="texto-claro2">${{totalValue}}</p>
                     </div>
-                    <div id="offer-info">
-                      <p id="texto-claro2"><br></p>
-                    </div>
-                    <div id="offer-info">
-                      <p id="texto-claro2"><br></p>
-                      <p id="texto-claro2" style="padding-top:30%">$70</p>
+                    
+                    <div id="offer-info" *ngIf="extras">
+                      <p id="texto-claro2" style="padding-top:30%">${{extrasValue}}</p>
                     </div>
                   </div>
                 </div>
