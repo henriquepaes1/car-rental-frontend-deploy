@@ -13,13 +13,15 @@ import { BackgroundComponent } from './template/background/background.component'
 import { Routes, RouterModule } from '@angular/router';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { DetailsViewComponent } from './components/details-view/details-view.component';
+import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
 
 const appRoutes : Routes = [
   {path: '', component: LoginViewComponent},
   {path: 'register', component: RegisterViewComponent},
   {path: 'data_gathering', component: DataGatheringViewComponent},
   {path: 'list', component: ListViewComponent},
-  {path: 'details', component: DetailsViewComponent}
+  {path: 'details', component: DetailsViewComponent},
+  {path: 'booking-details', component: BookingDetailsComponent}
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoutes : Routes = [
     TopBarComponent,
     BackgroundComponent,
     ListViewComponent,
-    DetailsViewComponent
+    DetailsViewComponent,
+    BookingDetailsComponent
   ],
   imports: [
     BrowserModule,
