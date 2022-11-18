@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: Lato;
+}
+
+.text-input{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #B7B7B7;
+    width: 100%;
+}
+
 .top-bar{
     z-index: 2;
     position: fixed;
