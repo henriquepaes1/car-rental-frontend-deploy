@@ -1,0 +1,255 @@
+.topbar{
+    background-color: #003B73;
+    color: aliceblue;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.topbar-logo{
+    margin: 0px;
+    margin-left: 20px;
+    background-color: #003B73;
+}
+body{
+    margin: 0px;
+    font-family: "Lato", sans-serif;
+}
+#second-bar{
+    background-color: #0074B7;
+    height: 120px;
+}
+#Center{
+    background-color: #cac2c2;
+    padding:1px;
+    height: 2000px;
+}
+#Fees-text{
+    color: #156708;
+    padding-left: 5vw;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+    height: 100vw;
+}
+#car-detail{
+    background-color: #FFFFFF;
+    height: 25vw;
+    width: 100%;
+    margin-left: 0%; 
+    border-radius: 20px;
+    display: flex;
+}
+.car-image{
+    margin-left:20%;
+    width: 60%;
+}
+#bmw-text{
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 30%;
+    width: fit-content;
+}
+
+#standard-select{
+    margin-left: 30%;
+    height: 30px;
+    width: 150px;
+    margin-bottom: 5%;
+} 
+
+#car-detail-1{
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    margin-bottom: 5%;
+}
+.offers{
+    width: 50%;
+}
+#stardard-offer{
+    background-color: #156708;
+    margin: 10%;
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+    margin-bottom: 0%;
+}
+#promo-offer{
+    background-color: #6e6767;
+    margin: 10%;
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+}
+#stand-text{
+    padding-left: 10%;
+    padding-top: 5%;
+    color:#FFFFFF;
+    font-weight: bold;
+    margin:0;
+}
+#price{
+    margin-left:15%;
+    margin-top: 3%;
+    margin-right: 15%;
+    font-size: large;
+    font-weight: bolder;
+    width: fit-content;
+    height: fit-content;
+    margin-top:7%;
+    color:#FFFFFF
+}
+#content-text{
+    margin-left:0%;
+    margin-top: 0%;
+    font-size: x-small;
+    color:#FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+}
+#content-1{
+margin-bottom: 0%;
+margin-top: 5%;
+margin-right: 10%;
+}
+.checkmark{
+    background-color: #156708;
+    color:#156708;
+    height: 15px;
+    
+}
+#Booking-sumary{
+    position: sticky;
+    top:30px;
+    background-color: #FFFFFF;
+    width: 30%;
+    margin-right:5%;
+    margin-left:10%;
+    border-radius: 20px;
+    margin-top: 0%; 
+    height: fit-content;
+}
+#booking-top{
+    background-color:#156708;
+    width: auto;
+    height: 5vw;
+    margin:0%;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#booking{
+    
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 0%;
+    padding-top: 3.5%;
+    color: #FFFFFF
+}
+#info-1{
+    margin:10%;
+    margin-bottom:5%;
+}
+#info-2{
+    margin:10%;
+    margin-top: 0%;
+}
+#subtitulo{
+    font-size: x-large;
+    color : rgb(33, 138, 33);
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+#subtexto{
+    font-weight: bold;
+    margin:0px;
+}
+#texto-claro{
+    color: #615c5c;
+    margin-top: 0%
+}
+#texto-claro2{
+    color: #615c5c;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#no-margin-flex{
+    margin: 0px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 50%;
+}
+#flex-column{
+    flex-direction: column;
+}
+#offer-info{
+    margin-bottom: 15%;
+}
+
+#first-half{
+    width: 50%;
+    margin-left: 5%; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#extra-checks{
+    margin-top:5%;
+    margin-bottom: 0%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#check-text{
+    display: flex;
+    width: 90%;
+    border-radius: 10px;
+    justify-content: space-between;
+    
+}
+#secure-text{
+    padding-left:5%;
+}
+#checkbox{
+    margin-right: 4%;
+    cursor: pointer;
+    transform: scale(2);
+}
+#pay-button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+
+}
+#pay-button{
+
+    margin-top: 0%;
+    width: 80%;
+    margin-left: 10%;
+}
+#button{
+    padding-top:2%;
+    padding-bottom:2%;
+    margin-bottom: 2%;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background-color: #156708;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
