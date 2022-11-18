@@ -175,27 +175,10 @@ margin-right: 10%;
     color: #615c5c;
     margin-top: 0%
 }
-#texto-claro2{
-    color: #615c5c;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    justify-content: space-between;
-}
 
-#no-margin-flex{
-    margin-right: 100px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 50%;
-}
 #flex-column{
     flex-direction: column;
 }
-#offer-info{
-    margin-bottom: 15%;
-    justify-content: space-between;
-}
-
 #first-half{
     width: 50%;
     margin-left: 5%; 
@@ -231,14 +214,11 @@ margin-right: 10%;
     width: 100%;
     height: 100%;
     border-radius: 10px;
-
-
-}
-#pay-button{
-
     margin-top: 0%;
     width: 80%;
     margin-left: 10%;
+
+
 }
 #button{
     padding-top:2%;
@@ -255,3 +235,8 @@ margin-right: 10%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
   }
+
+  #value{
+    text-align: right;
+  }
+

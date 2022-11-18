@@ -27,8 +27,8 @@ export class BookingDetailsComponent implements OnInit {
   totalValue: number;
 
   constructor() {
-    this.bookingDuration = 1;
-    this.carRent = 150;
+    this.bookingDuration = 3;
+    this.carRent = 200;
     this.totalValue = this.carRent * this.bookingDuration;
    }
 
@@ -44,10 +44,10 @@ export class BookingDetailsComponent implements OnInit {
     this.tpProtection = teste.namedItem("tp-protection")?.checked;
     this.glassProtection = teste.namedItem("glass-protection")?.checked;
 
-    this.carProtectionValue = this.carProtection ? 10 : 0;
-    this.fullProtectionValue = this.fullProtection ? 20 : 0;
-    this.tpProtectionValue = this.tpProtection ? 5 : 0;
-    this.glassProtectionValue = this.glassProtection ? 2 : 0;
+    this.carProtectionValue = this.carProtection ? (this.bookingDuration * 10) : 0;
+    this.fullProtectionValue = this.fullProtection ? (this.bookingDuration * 20) : 0;
+    this.tpProtectionValue = this.tpProtection ? (this.bookingDuration * 5) : 0;
+    this.glassProtectionValue = this.glassProtection ? (this.bookingDuration * 2) : 0;
 
     this.extras = this.carProtection || this.fullProtection || this.tpProtection || this.glassProtection;
     this.extrasValue = this.bookingDuration * (this.carProtectionValue + this.fullProtectionValue + this.tpProtectionValue + this.glassProtectionValue);
