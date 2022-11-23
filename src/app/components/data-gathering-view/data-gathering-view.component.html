@@ -1,31 +1,20 @@
 <!-- Where do you want to pick up your car?-->
-<div class="form-group">
-    <input type="search" name="address" id="pick_up_address_input_id" class="form-control text-input" style="margin-bottom: 25px;" placeholder="Where do you want to pick up your car?">
-    <input type="text" name="date" class="form-control text-input" style="margin-bottom: 25px;" placeholder="On which date do you want to pick up your car?">
-</div>
-
-<!-- Vehicle filter -->
-<div class="form-group" style="margin-bottom: 30px; margin-top: 30px;">
-    <label class="form-label thick">Vehicle Type</label>
-    <div class="form-group">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="vehicle_types" id="vehicle_type_luxury" value="luxury">
-            <label for="vehicle_type_luxury" class="form-check-label">Luxury</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="vehicle_types" id="vehicle_type_premium" value="premium">
-            <label for="vehicle_type_premium" class="form-check-label">Premium</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="vehicle_types" id="vehicle_type_economy" value="economy">
-            <label for="vehicle_type_economy" class="form-check-label">Economy</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="vehicle_types" id="vehycle_type_supereconomy" value="super_economy">
-            <label for="vehycle_type_supereconomy" class="form-check-label">Super Economy</label>
+<form #dataGatheringForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" style="margin-bottom: 30px; margin-top: 30px;">
+        <input type="search" name="address" id="pick_up_address_input_id" class="form-control text-input" style="margin-bottom: 25px;" placeholder="Where do you want to pick up your car?" [(ngModel)]="bookingModel.address">
+        <input type="text" name="date" class="form-control text-input" style="margin-bottom: 25px;" placeholder="On which date do you want to pick up your car?" [(ngModel)]="bookingModel.date">
+    </div>
+    <!-- Vehicle filter -->
+    <div class="form-group" style="margin-bottom: 30px; margin-top: 30px;">
+        <label class="form-label thick">Vehicle Type</label>
+        <div class="form-group" *ngFor="let type of types">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vehicle_types" id="vehicle_type_{{ type }}" value="{{ type }}" [(ngModel)]="bookingModel.vehicle_type">
+                <label for="vehicle_type_{{ type }}" class="form-check-label">{{ type }}</label>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- Search button -->
-<a type="submit" class="btn btn-primary btn-block blue-btn" style="margin-left: 0px; margin-right: 0px;" href="/list">Search</a>
+    
+    <!-- Search button -->
+    <button type="submit" class="btn btn-primary btn-block blue-btn" style="margin-left: 0px; margin-right: 0px;">Search</button>    
+</form>

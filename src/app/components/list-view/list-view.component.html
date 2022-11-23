@@ -1,18 +1,15 @@
-<div style="display: flex;">
-    <a href="/details"><img src="assets/car1.png" style="height: 160px;" alt="car image"></a>
-    <div style="margin-left: 40px; margin-top: 40px;">
-        <a style="color: black;" href="/details"><p class="thick" style="margin: 0px; margin-bottom: 10px;">Car 1 | Manual</p></a>
-        <a style="color: black;" href="/details"><p>$150/day</p></a>
+
+<!--href="/details"-->
+<div *ngFor="let car of carList">
+    <div style="display: flex;" (click)="onClickCarElement(car)">
+        <a><img src="assets/car1.png" style="height: 160px;" alt="car image"></a>
+        <div style="margin-left: 40px; margin-top: 40px;">
+            <a style="color: black;"><p class="thick" style="margin: 0px; margin-bottom: 10px;">{{car.model}} | {{car.transmission}}</p></a>
+            <a style="color: black;"><p>${{car.rent}}/day</p></a>
+        </div>
     </div>
 </div>
 
-<div style="display: flex;">
-    <a href="/details"><img src="assets/car2.png" style="height: 160px;" alt="car image"></a>
-    <div style="margin-left: 40px; margin-top: 40px;">
-        <a style="color: black;" href="/details"><p class="thick" style="margin: 0px; margin-bottom: 10px;">Car 2 | Automatic</p></a>
-        <a style="color: black;" href="/details"><p>$175/day</p></a>
-    </div>
-</div>
 
 <!-- Go back button -->
-<a class="btn btn-outline-primary btn-block outline-btn" style="margin-left: 0px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px;" href="/data_gathering">Go Back</a>
+<a class="btn btn-outline-primary btn-block outline-btn" style="margin-left: 0px; margin-right: 0px; margin-top: 40px; margin-bottom: 0px;" (click)="btnGoBack()">Go Back</a>
