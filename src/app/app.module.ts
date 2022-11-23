@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +15,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { DetailsViewComponent } from './components/details-view/details-view.component';
 import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
+import { CarRegistrationComponent } from './components/car-registration/car-registration.component';
 
 const appRoutes : Routes = [
   {path: '', component: LoginViewComponent},
@@ -21,7 +23,8 @@ const appRoutes : Routes = [
   {path: 'data_gathering', component: DataGatheringViewComponent},
   {path: 'list', component: ListViewComponent},
   {path: 'details', component: DetailsViewComponent},
-  {path: 'booking-details', component: BookingDetailsComponent}
+  {path: 'booking-details', component: BookingDetailsComponent},
+  {path: 'car-registration', component: CarRegistrationComponent}
 ];
 
 @NgModule({
@@ -34,11 +37,13 @@ const appRoutes : Routes = [
     BackgroundComponent,
     ListViewComponent,
     DetailsViewComponent,
-    BookingDetailsComponent
+    BookingDetailsComponent,
+    CarRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
