@@ -1,21 +1,13 @@
-<div class="card">
-    <img src="assets/car1.png" class="card-img-top" alt="car image">
-    <div class="card-body">
-        <h3 class="card-text">Car 1 | Manual</h3>
-        <small>$150/day</small>
+<!-- href="/details" -->
+<div *ngFor="let car of carList">
+    <div style="display: flex;" (click)="onClickCarElement(car)">
+        <a><img src="assets/car1.png" style="height: 160px; cursor: pointer;" alt="Car image"></a>
+        <div style="margin-left: 40px; margin-top: 40px;">
+            <a style="color: black;"><p class="thick" style="margin: 0px; margin-bottom: 10px; cursor: pointer;">{{car.model}} | {{car.transmission}}</p></a>
+            <a style="color: black;"><p style="cursor: pointer;">${{car.rent}}/day</p></a>
+        </div>
     </div>
 </div>
 
-<div class="card">
-    <img src="assets/car2.png" class="card-img-top" alt="car image">
-    <div class="card-body">
-        <h3 class="card-text">Car 2 | Automatic</h3>
-        <small>$175/day</small>
-    </div>
-</div>
-<small>
-    No more results
-</small>
-<a class="btn btn-outline-primary btn-lg btn-block mt-2" href="/data_gathering">
-    GO BACK
-</a>
+<!-- Go back button -->
+<a class="btn btn-outline-primary btn-block outline-btn" style="margin-left: 0px; margin-right: 0px; margin-top: 30px; margin-bottom: 0px;" (click)="btnGoBack()">Go Back</a>
