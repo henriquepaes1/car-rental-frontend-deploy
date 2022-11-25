@@ -21,6 +21,7 @@ export class ListViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.carList = [];
     this.route.queryParams.subscribe((a: any) => {
       this.bookingModel.address = a.address;
       this.bookingModel.date = a.date;
@@ -28,7 +29,7 @@ export class ListViewComponent implements OnInit {
     });
     //this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
     // this.carList = this.listing.listCarsNoRequest(this.bookingModel.vehicle_type.toLocaleLowerCase());
-
+    
     this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
   }
 

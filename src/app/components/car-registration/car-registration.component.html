@@ -1,4 +1,4 @@
-<form ngForm #f="ngForm" (ngSubmit)="submit(f.value)" class="container-xl container">
+<form ngForm #f="ngForm" (ngSubmit)="submit(f.value);" class="container-xl container">
     <div class="form-group model">
         <label for="">Model</label>
         <input required ngModel name="model" #model="ngModel" type="text" class="form-control">
@@ -8,21 +8,21 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="inputCity">Make</label>
+            <label for="">Make</label>
             <input required ngModel name="make" #make="ngModel" type="text" class="form-control">
             <div class="alert alert-danger" *ngIf="make.touched && !make.valid">
                 <div *ngIf="make.errors?.['required']">Make is required</div>
             </div>
         </div>
         <div class="form-group col-md-4">
-            <label for="inputCity">Rent</label>
+            <label for="">Rent</label>
             <input required ngModel name="rent" #rent="ngModel" type="text" class="form-control">
             <div class="alert alert-danger" *ngIf="rent.touched && !rent.valid">
                 <div *ngIf="rent.errors?.['required']">Rent is required</div>
             </div>
         </div>
         <div class="form-group col-md-4">
-            <label for="inputZip">Type</label>
+            <label for="">Type</label>
             <input required ngModel name="type" #type="ngModel" type="text" class="form-control" id="inputZip">
             <div class="alert alert-danger" *ngIf="type.touched && !type.valid">
                 <div *ngIf="type.errors?.['required']">Type is required</div>
@@ -31,34 +31,34 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="inputCity">Color</label>
+            <label for="">Color</label>
             <input ngModel name="color" #color="ngModel" type="text" class="form-control">
         </div>
         <div class="form-group col-md-4">
-            <label for="inputCity">Transmission</label>
+            <label for="">Transmission</label>
             <input ngModel name="transmission" #transmission="ngModel" type="text" class="form-control">
         </div>
         <div class="form-group col-md-4">
-            <label for="inputZip">Horsepower</label>
+            <label for="">Horsepower</label>
             <input ngModel name="horsepower" #horse="ngModel" type="text" class="form-control" id="inputZip">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="inputCity">Acceleration</label>
+            <label for="">Acceleration</label>
             <input ngModel name="acceleration" #acceleration="ngModel" type="text" class="form-control">
         </div>
         <div class="form-group col-md-4">
-            <label for="inputCity">Consumption</label>
+            <label for="">Consumption</label>
             <input ngModel name="consumption" #consumption="ngModel" type="text" class="form-control">
         </div>
         <div class="form-group col-md-3">
-            <label for="inputZip">Trunk</label>
+            <label for="">Trunk</label>
             <input ngModel name="trunk" #trunk="ngModel" type="text" class="form-control" id="inputZip">
         </div>
         <div class="form-row">
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Seats</label>
+                <label for="">Seats</label>
                 <select required ngModel name="seats" #seats="ngModel" class="form-control" id="exampleFormControlSelect1">
                     <option>2</option>
                     <option>3</option>
@@ -75,15 +75,11 @@
             </div>
         </div>
     </div>
-    <div class="file-upload-wrapper">
-        <input type="file" id="input-file-now-custom-2" class="file-upload" data-height="500" />
-    </div>
+    <label>Upload an image</label>
+    <br>
+    <input ngModel name="file" #file="ngModel" type="file" (change)="onFileSelected($event)">
     <br>
     <div class=""row>
-        <button class="btn btn-primary btn-block blue-btn" [disabled]="!f.valid" href="">Register Car</button>
+        <button class="btn btn-primary btn-block blue-btn" [disabled]="!f.valid">Register Car</button>
     </div> 
-</form>
-
-<!-- <div class="row">
-    <a type="submit" class="btn btn-primary btn-block blue-btn" href="/data_gathering">Register car</a>
-</div> -->
+<!--     <img src="http://localhost:8080/images?fileName=corsa.jpeg">  -->
