@@ -15,6 +15,7 @@ import { ListViewComponent } from './components/list-view/list-view.component';
 import { DetailsViewComponent } from './components/details-view/details-view.component';
 import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
 import { CarRegistrationComponent } from './components/car-registration/car-registration.component';
+import { StatusBarComponent } from './components/status-bar/status-bar.component';
 
 const appRoutes : Routes = [
   {path: '', component: LoginViewComponent},
@@ -37,7 +38,8 @@ const appRoutes : Routes = [
     ListViewComponent,
     DetailsViewComponent,
     BookingDetailsComponent,
-    CarRegistrationComponent
+    CarRegistrationComponent,
+    StatusBarComponent
   ],
   imports: [
     BrowserModule,

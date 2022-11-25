@@ -2,7 +2,9 @@
 <app-top-bar></app-top-bar>
 
 <!-- Light blue background -->
-<app-background></app-background>
+<app-background *ngIf="!status_bar"></app-background>
+<app-status-bar *ngIf="status_bar"></app-status-bar>
+
 
 <!-- Content -->
 <div class="custom-content">
