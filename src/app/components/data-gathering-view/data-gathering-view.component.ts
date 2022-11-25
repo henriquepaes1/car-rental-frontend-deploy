@@ -27,6 +27,7 @@ export class DataGatheringViewComponent implements OnInit {
     } catch (error) {
       
     }
+    console.log(this.bookingModel);
   }
 
   onSubmit() : void {
