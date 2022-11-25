@@ -1,7 +1,7 @@
 <!-- Where do you want to pick up your car?-->
 <form #dataGatheringForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="form-group" style="margin-bottom: 30px; margin-top: 30px;">
-        <input type="search" name="address" id="pick_up_address_input_id" class="form-control text-input" style="margin-bottom: 25px;" placeholder="Where do you want to pick up your car?" [(ngModel)]="bookingModel.address">
+    <div class="form-group" style="margin-bottom: 30px; margin-top: 0px;">
+        <input type="text" name="address" id="pick_up_address_input_id" class="form-control text-input" style="margin-bottom: 25px;" placeholder="Where do you want to pick up your car?" [(ngModel)]="bookingModel.address">
         <input type="text" name="date" class="form-control text-input" style="margin-bottom: 25px;" placeholder="On which date do you want to pick up your car?" [(ngModel)]="bookingModel.date">
     </div>
     <!-- Vehicle filter -->

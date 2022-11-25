@@ -5,6 +5,5 @@ export class BookingModel {
     public address : String;
     public date : String;
     public vehicle_type : String;
-
     public carJson: string;
 }
