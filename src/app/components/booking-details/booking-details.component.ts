@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BookingModel } from 'src/app/models/booking-model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-booking-details',
@@ -26,13 +28,21 @@ export class BookingDetailsComponent implements OnInit {
 
   totalValue: number;
 
-  constructor() {
+  booking = new BookingModel();
+
+  constructor(private route: ActivatedRoute) {
     this.bookingDuration = 3;
     this.carRent = 200;
     this.totalValue = this.carRent * this.bookingDuration;
    }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((a: any) => {
+      this.booking.address = a.address;
+      this.booking.date = a.date;
+      this.booking.vehicle_type = a.vehicle_type;
+      this.booking.carJson = a.carJson;
+    });
   }
 
   updateStatus() {
@@ -52,8 +62,6 @@ export class BookingDetailsComponent implements OnInit {
     this.extras = this.carProtection || this.fullProtection || this.tpProtection || this.glassProtection;
     this.extrasValue = this.bookingDuration * (this.carProtectionValue + this.fullProtectionValue + this.tpProtectionValue + this.glassProtectionValue);
 
-    this.totalValue = this.extras ? this.bookingDuration * this.carRent + this.extrasValue : this.bookingDuration * this.carRent;
-    
+    this.totalValue = this.extras ? this.bookingDuration * this.carRent + this.extrasValue : this.bookingDuration * this.carRent; 
   }
-
 }
