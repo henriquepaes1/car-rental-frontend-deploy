@@ -2,8 +2,8 @@
 
     <!-- Image and name -->
     <div style="text-align: center; margin-bottom: 40px;">
-        <img src="assets/car1.png" alt="Car photo">
-        <p class="card-text thick" style="font-size: 22px;">{{carInstance.model}}</p>
+        <img src="http://localhost:8080/images?fileName={{carInstance.imagepath}}" alt="Car photo" height="10%" width="60%">
+        <p class="card-text thick" style="font-size: 22px;">{{carInstance.make}} {{carInstance.model}}</p>
         <p class="card-text thick">${{carInstance.rent}}/day</p>
     </div>
 
@@ -22,15 +22,15 @@
                 <div class="card light-grey-container" style="height: 110px;">
                     <div class="card-body">
                         <p class="card-text thick">{{carInstance.trunk}}L Trunk</p>
-                        <p class="card-text thick">No Frunk</p>
+                        <p class="card-text thick">{{carInstance.color}}</p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 col-sm-4">
                 <div class="card light-grey-container">
                     <div class="card-body">
-                        <p class="card-text thick">0 - {{carInstance.acceleration}} kph</p>
-                        <p class="card-text thick">3,5 seg</p>
+                        <p class="card-text thick">0 - 100 km/h</p>
+                        <p class="card-text thick">{{carInstance.acceleration}} s</p>
                     </div>
                 </div>
             </div>

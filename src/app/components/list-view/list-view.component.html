@@ -1,7 +1,7 @@
 <!-- href="/details" -->
 <div *ngFor="let car of carList">
     <div style="display: flex;" (click)="onClickCarElement(car)">
-        <a><img src="http://localhost:8080/images?fileName={{car.image}}" style="height: 160px; cursor: pointer;" alt="Car image"></a>
+        <a><img src="http://localhost:8080/images?fileName={{car.imagepath}}" style="height: 160px; cursor: pointer;" alt="Car image"></a>
         <div style="margin-left: 40px; margin-top: 40px;">
             <a style="color: black;"><p class="thick" style="margin: 0px; margin-bottom: 10px; cursor: pointer;">{{car.model}} | {{car.transmission}}</p></a>
             <a style="color: black;"><p style="cursor: pointer;">${{car.rent}}/day</p></a>

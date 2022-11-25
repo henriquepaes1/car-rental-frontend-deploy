@@ -11,6 +11,6 @@ export class Car{
     seats: number;
     trunk: number;
     consumption: number;
-    image: string;
+    imagepath: string;
 
 }

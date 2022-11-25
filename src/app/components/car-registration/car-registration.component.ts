@@ -40,7 +40,7 @@ export class CarRegistrationComponent implements OnInit {
     car.trunk = <number>forms.trunk;
     car.consumption = <number>forms.consumption;
     let path = (<string>forms.file).split("\\");
-    car.image = path[path.length - 1]
+    car.imagepath = path[path.length - 1]
     console.log(path);
     console.log(car);
 

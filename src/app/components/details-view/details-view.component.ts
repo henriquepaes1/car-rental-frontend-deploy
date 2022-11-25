@@ -3,6 +3,7 @@ import { CarListingService } from 'src/app/services/car-listing.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookingModel } from 'src/app/models/booking-model';
 import { Car } from 'src/app/models/car-model';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-details-view',
@@ -17,6 +18,7 @@ export class DetailsViewComponent implements OnInit {
   constructor(private listing: CarListingService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.carInstance.imagepath);
     this.route.queryParams.subscribe((a: any) => {
       this.bookingModel.address = a.address;
       this.bookingModel.date = a.date;
