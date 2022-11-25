@@ -41,6 +41,7 @@ export class ListViewComponent implements OnInit {
   }
 
   btnGoBack() : void {
+    this.carList = []; // reset car list when navigating
     this.router.navigate(['/data_gathering'],{
       queryParams: this.bookingModel
     });
