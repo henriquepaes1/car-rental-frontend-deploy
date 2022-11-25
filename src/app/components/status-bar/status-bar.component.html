@@ -1,0 +1,50 @@
+<div id="second-bar">
+      <div class="stepper-wrapper">
+        <div [ngClass]="{
+          'stepper-item': true,
+          'active': c1,
+          'completed': (c2 || c3 || c4)
+        }">
+          <div class="step-counter">1</div>
+          <div class="step-name">Local e Data da Reserva</div>
+        </div>
+        <div [ngClass]="{
+          'stepper-item': true,
+          'active': c2 || c3,
+          'completed': (c4)
+              }">
+          <div class="step-counter">2</div>
+          <div class="step-name">Seleção do Carro</div>
+        </div>
+        <div [ngClass]="{
+          'stepper-item': true,
+          'active': c4
+        }" >
+          <div class="step-counter">3</div>
+          <div class="step-name">Produtos Adicionais</div>
+        </div>
+        <div class="stepper-item">
+          <div class="step-counter">4</div>
+          <div class="step-name">Pagamento</div>
+        </div>
+
+      </div>
+
+      <div class="edit">
+        <div class="stepper-wrapper">
+          <a href="/data_gathering" class="edit-button" *ngIf="c2||c3||c4">editar</a>
+          <p  class="apagado" *ngIf="!(c2||c3||c4)">editar</p>
+          
+          <a href="/list" class="edit-button" *ngIf="c3||c4">editar</a>
+          <p  class="apagado" *ngIf="!(c3||c4)">editar</p>
+
+          <a href="/booking-details" [className]="'edit-button'" *ngIf="!(c1||c2||c3||c4)">editare</a>
+          <p  class="apagado" *ngIf="(c1||c2||c3||c4)">editar</p>
+
+          <p  class="apagado" >editar</p>
+
+          
+        </div>
+      </div>
+
+</div>
