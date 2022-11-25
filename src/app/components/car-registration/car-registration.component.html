@@ -23,7 +23,13 @@
         </div>
         <div class="form-group col-md-4">
             <label for="">Type</label>
-            <input required ngModel name="type" #type="ngModel" type="text" class="form-control" id="inputZip">
+            <!-- <input required ngModel name="type" #type="ngModel" type="text" class="form-control" id="inputZip"> -->
+            <select required ngModel name="type" #type="ngModel" class="form-control" >
+                <option>luxury</option>
+                <option>premium</option>
+                <option>economy</option>
+                <option>super economy</option>
+            </select>
             <div class="alert alert-danger" *ngIf="type.touched && !type.valid">
                 <div *ngIf="type.errors?.['required']">Type is required</div>
             </div>
