@@ -12,6 +12,7 @@ export class CarRegisterService {
   registerCar(car: Car){
     this.http.post<Car>("http://localhost:8080/car-creation/add-car", car).subscribe(
       (response) => {
+        alert("succesfully registered car");
         console.log(response);
       }
     );

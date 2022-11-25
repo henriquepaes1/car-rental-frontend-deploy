@@ -27,7 +27,9 @@ export class ListViewComponent implements OnInit {
       this.bookingModel.vehicle_type = a.vehicle_type;
     });
     //this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
-    this.carList = this.listing.listCarsNoRequest(this.bookingModel.vehicle_type.toLocaleLowerCase());
+    // this.carList = this.listing.listCarsNoRequest(this.bookingModel.vehicle_type.toLocaleLowerCase());
+
+    this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
   }
 
   onClickCarElement(car: Car) : void{
