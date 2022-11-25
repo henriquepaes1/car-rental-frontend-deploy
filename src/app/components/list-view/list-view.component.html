@@ -1,5 +1,5 @@
 <!-- href="/details" -->
-<div *ngFor="let car of carList">
+<div *ngFor="let car of this.carList">
     <div style="display: flex;" (click)="onClickCarElement(car)" class="image-box">
         <a><img src="http://localhost:8080/images?fileName={{car.imagepath}}" width="300px"style="height: 160px; cursor: pointer;" alt="Car image"></a>
         <div style="margin-left: 40px; margin-top: 40px;">

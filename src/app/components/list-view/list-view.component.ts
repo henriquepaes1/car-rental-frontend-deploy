@@ -21,7 +21,10 @@ export class ListViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.carList = [];
+    while(this.carList.length != 0){
+      this.carList.pop()
+    }
+    console.log(this.carList.length);
     this.route.queryParams.subscribe((a: any) => {
       this.bookingModel.address = a.address;
       this.bookingModel.date = a.date;
@@ -31,6 +34,7 @@ export class ListViewComponent implements OnInit {
     // this.carList = this.listing.listCarsNoRequest(this.bookingModel.vehicle_type.toLocaleLowerCase());
     
     this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
+    console.log(this.carList.length);
   }
 
   onClickCarElement(car: Car) : void{
@@ -41,7 +45,10 @@ export class ListViewComponent implements OnInit {
   }
 
   btnGoBack() : void {
-    this.carList = []; // reset car list when navigating
+    while(this.carList.length != 0){
+      this.carList.pop()
+    }
+    console.log(this.carList.length);
     this.router.navigate(['/data_gathering'],{
       queryParams: this.bookingModel
     });
