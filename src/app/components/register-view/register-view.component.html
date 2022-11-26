@@ -1,28 +1,32 @@
-<form>
-    <!-- Inputs -->
-    <div class="form-group">
-        <label for="">First Name</label>
-        <input type="text" class="form-control" id="" aria-describedby="">
+<form ngForm #f="ngForm" (ngSubmit)="onSubmit(f.value);" class="container-xl container" style="margin: 0px; border: 0px; padding: 0px; max-width: none;">
+  <div class="form-group model">
+    <label for="">First Name</label>
+    <input required ngModel name="first-name" #model="ngModel" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
+      <div *ngIf="model.errors?.['required']">Informing a valid first name is obligatory</div>
     </div>
-    <div class="form-group">
-        <label for="">Last Name</label>
-        <input type="text" class="form-control" id="" aria-describedby="">
+  </div>
+  <div class="form-group model">
+    <label for="">Last Name</label>
+    <input required ngModel name="last-name" #model="ngModel" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
+      <div *ngIf="model.errors?.['required']">Informing a valid last name is obligatory</div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group model">
+    <label for="">Email address</label>
+    <input required ngModel name="email" #model="ngModel" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
+      <div *ngIf="model.errors?.['required']">Informing a valid e-mail address is obligatory</div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="inputPassword1">
+  </div>
+  <div class="form-group model">
+    <label for="">Password</label>
+    <input required ngModel name="password" #model="ngModel" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
+      <div *ngIf="model.errors?.['required']">Creating a password is obligatory</div>
     </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Confirm Password</label>
-        <input type="password" class="form-control" id="inputConfirmPassword1">
-    </div>
-    <!-- Button -->
-    <div class="row">
-      <button type="submit" class="btn btn-primary btn-block blue-btn">Submit</button>
-    </div>
-</form>
+  </div>
+  <div class=""row>
+    <button class="btn btn-primary btn-block blue-btn" style="margin: 0px; margin-top: 24px;" [disabled]="!f.valid">Register</button>
+  </div>

@@ -2,12 +2,15 @@
 <app-top-bar></app-top-bar>
 
 <!-- Light blue background -->
-<app-background *ngIf="!status_bar"></app-background>
-<app-status-bar *ngIf="status_bar"></app-status-bar>
-
+<app-background></app-background>
 
 <!-- Content -->
 <div class="custom-content">
+    <app-status-bar *ngIf="status_bar"></app-status-bar>
+    <br *ngIf="status_bar">
+    <br *ngIf="!status_bar">
+    <br *ngIf="!status_bar">
+    <br *ngIf="!status_bar">
     <div class="custom-container">
         <router-outlet></router-outlet>
     </div>
