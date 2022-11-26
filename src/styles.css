@@ -21,8 +21,6 @@
     border-radius: 10px;
 }
 
-
-
 .thick{
     font-weight: bold;
 }
@@ -31,9 +29,7 @@
     cursor: pointer;
 }
 
-  
 .custom-content{
-    z-index: 1;
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
