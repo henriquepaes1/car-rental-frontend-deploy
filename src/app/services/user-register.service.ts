@@ -7,10 +7,9 @@ import { User } from 'src/app/models/user-model';
 })
 
 export class UserRegisterService {
-  userList: User[];
+  userList = new Array<User>();
 
-  constructor(private http: HttpClient) { 
-    this.userList = new Array<User>();
+  constructor() {
   }
 
   isRegistered(user: User){

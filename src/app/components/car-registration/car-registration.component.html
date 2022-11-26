@@ -1,29 +1,30 @@
-<form ngForm #f="ngForm" (ngSubmit)="submit(f.value);" class="container-xl container">
-    <div class="form-group model">
-        <label for="">Model</label>
-        <input required ngModel name="model" #model="ngModel" type="text" class="form-control">
-        <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
-            <div *ngIf="model.errors?.['required']">Model is required</div>
+<form ngForm #f="ngForm" (ngSubmit)="submit(f.value);" class="container-xl container" style="margin: 0px; border: 0px; padding: 0px; max-width: none;">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="">Model</label>
+            <input required ngModel name="model" #model="ngModel" type="text" class="form-control">
+            <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
+                <div *ngIf="model.errors?.['required']">Model is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="">Maker</label>
+            <input required ngModel name="make" #make="ngModel" type="text" class="form-control">
+            <div class="alert alert-danger" *ngIf="make.touched && !make.valid">
+                <div *ngIf="make.errors?.['required']">Maker is required</div>
+            </div>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="">Make</label>
-            <input required ngModel name="make" #make="ngModel" type="text" class="form-control">
-            <div class="alert alert-danger" *ngIf="make.touched && !make.valid">
-                <div *ngIf="make.errors?.['required']">Make is required</div>
-            </div>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="">Rent</label>
+            <label for="">Price/day</label>
             <input required ngModel name="rent" #rent="ngModel" type="text" class="form-control">
             <div class="alert alert-danger" *ngIf="rent.touched && !rent.valid">
-                <div *ngIf="rent.errors?.['required']">Rent is required</div>
+                <div *ngIf="rent.errors?.['required']">Price is required</div>
             </div>
         </div>
         <div class="form-group col-md-4">
             <label for="">Type</label>
-            <!-- <input required ngModel name="type" #type="ngModel" type="text" class="form-control" id="inputZip"> -->
             <select required ngModel name="type" #type="ngModel" class="form-control" >
                 <option>luxury</option>
                 <option>premium</option>
@@ -34,48 +35,46 @@
                 <div *ngIf="type.errors?.['required']">Type is required</div>
             </div>
         </div>
-    </div>
-    <div class="form-row">
         <div class="form-group col-md-4">
             <label for="">Color</label>
             <input ngModel name="color" #color="ngModel" type="text" class="form-control">
         </div>
+    </div>
+    <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="">Transmission</label>
+            <label for="">Transmission type</label>
             <input ngModel name="transmission" #transmission="ngModel" type="text" class="form-control">
         </div>
         <div class="form-group col-md-4">
             <label for="">Horsepower</label>
             <input ngModel name="horsepower" #horse="ngModel" type="text" class="form-control" id="inputZip">
         </div>
-    </div>
-    <div class="form-row">
         <div class="form-group col-md-4">
             <label for="">Acceleration</label>
             <input ngModel name="acceleration" #acceleration="ngModel" type="text" class="form-control">
         </div>
+    </div>
+    <div class="form-row">
         <div class="form-group col-md-4">
             <label for="">Consumption</label>
             <input ngModel name="consumption" #consumption="ngModel" type="text" class="form-control">
         </div>
-        <div class="form-group col-md-3">
-            <label for="">Trunk</label>
+        <div class="form-group col-md-4">
+            <label for="">Trunk size</label>
             <input ngModel name="trunk" #trunk="ngModel" type="text" class="form-control" id="inputZip">
         </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="">Seats</label>
-                <select required ngModel name="seats" #seats="ngModel" class="form-control" id="exampleFormControlSelect1">
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                </select>
-            </div>
+        <div class="form-group col-md-4">
+            <label for="">Seats</label>
+            <select required ngModel name="seats" #seats="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
             <div class="alert alert-danger" *ngIf="seats.touched && !seats.valid">
                 <div *ngIf="seats.errors?.['required']">Seats number is required</div>
             </div>
@@ -86,6 +85,6 @@
     <input ngModel name="file" #file="ngModel" type="file" (change)="onFileSelected($event)">
     <br>
     <div class=""row>
-        <button class="btn btn-primary btn-block blue-btn" [disabled]="!f.valid">Register Car</button>
+        <button class="btn btn-primary btn-block blue-btn" style="margin: 0px; margin-top: 24px;" [disabled]="!f.valid">Register Car</button>
     </div> 
 <!--     <img src="http://localhost:8080/images?fileName=corsa.jpeg">  -->

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from 'src/app/models/user-model';
 import { UserRegisterService } from 'src/app/services/user-register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-view',
@@ -9,10 +10,8 @@ import { UserRegisterService } from 'src/app/services/user-register.service';
   styleUrls: ['./register-view.component.css']
 })
 export class RegisterViewComponent implements OnInit {
-  userRegisterService: UserRegisterService;
 
-  constructor(registerService: UserRegisterService) { 
-    this.userRegisterService = registerService;
+  constructor(private router: Router, private userRegisterService: UserRegisterService) {
   }
 
   ngOnInit(): void {
@@ -23,6 +22,10 @@ export class RegisterViewComponent implements OnInit {
     user.email = forms.email;
     user.password = forms.password;
     this.userRegisterService.registerUser(user);
-    window.location.href = '';
+    this.router.navigate(['']);
+    console.log("Usuário:");
+    console.log(user);
+    console.log("Está registrado:");
+    console.log(this.userRegisterService.isRegistered(user));
   }
 }
