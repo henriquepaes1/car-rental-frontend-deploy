@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingModel } from 'src/app/models/booking-model';
 import { ActivatedRoute } from '@angular/router';
+import { Car } from 'src/app/models/car-model';
 
 @Component({
   selector: 'app-booking-details',
@@ -29,12 +30,16 @@ export class BookingDetailsComponent implements OnInit {
   totalValue: number;
 
   booking = new BookingModel();
+  carInstance = new Car;
+
+  initialDate = new Date;
+  finalDate = new Date;
+
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   constructor(private route: ActivatedRoute) {
-    this.bookingDuration = 3;
-    this.carRent = 200;
-    this.totalValue = this.carRent * this.bookingDuration;
-   }
+    
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((a: any) => {
@@ -42,7 +47,23 @@ export class BookingDetailsComponent implements OnInit {
       this.booking.date = a.date;
       this.booking.vehicle_type = a.vehicle_type;
       this.booking.carJson = a.carJson;
+      this.carInstance = JSON.parse(a.carJson);
     });
+
+    let dateArray = [];
+    dateArray = this.booking.date.split(" - ");
+    //D-M-Y -> Y-M-D
+    let initDate = dateArray[0].split("/");
+    let finalDate = dateArray[1].split("/");
+
+    this.initialDate = new Date(Number(initDate[2]), Number(initDate[1])-1, Number(initDate[0]));
+    this.finalDate = new Date(Number(finalDate[2]), Number(finalDate[1])-1, Number(finalDate[0]));
+
+
+    this.bookingDuration = this.getDayDiff(this.initialDate, this.finalDate);
+    console.log(this.initialDate, this.finalDate, this.bookingDuration);
+    this.carRent = this.carInstance.rent;
+    this.totalValue = this.carRent * this.bookingDuration;
   }
 
   updateStatus() {
@@ -63,5 +84,11 @@ export class BookingDetailsComponent implements OnInit {
     this.extrasValue = this.bookingDuration * (this.carProtectionValue + this.fullProtectionValue + this.tpProtectionValue + this.glassProtectionValue);
 
     this.totalValue = this.extras ? this.bookingDuration * this.carRent + this.extrasValue : this.bookingDuration * this.carRent; 
+  }
+
+  private getDayDiff(startDate: Date, endDate: Date): number {
+    const msInDay = 24 * 60 * 60 * 1000;
+  
+    return Math.round(Math.abs(Number(endDate) - Number(startDate)) / msInDay);
   }
 }

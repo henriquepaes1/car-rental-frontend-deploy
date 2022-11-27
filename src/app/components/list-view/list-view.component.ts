@@ -17,7 +17,7 @@ export class ListViewComponent implements OnInit {
   bookingModel = new BookingModel();
 
   constructor(private listing: CarListingService, private route: ActivatedRoute, private router: Router) {
-    
+
   }
 
   ngOnInit(): void {
@@ -30,11 +30,8 @@ export class ListViewComponent implements OnInit {
       this.bookingModel.date = a.date;
       this.bookingModel.vehicle_type = a.vehicle_type;
     });
-    //this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
-    // this.carList = this.listing.listCarsNoRequest(this.bookingModel.vehicle_type.toLocaleLowerCase());
-    
     this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
-    console.log(this.carList.length);
+    //this.carList = this.listing.listCars(this.bookingModel.vehicle_type.toLocaleLowerCase());
   }
 
   onClickCarElement(car: Car) : void{

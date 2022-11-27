@@ -32,13 +32,13 @@
 
       <div class="edit">
         <div class="stepper-wrapper">
-          <a href="/data_gathering" class="edit-button" *ngIf="c2||c3||c4">editar</a>
+          <a (click)="onClickDataGathering()" class="edit-button" *ngIf="c2||c3||c4">editar</a>
           <p  class="apagado" *ngIf="!(c2||c3||c4)">editar</p>
           
-          <a href="/list" class="edit-button" *ngIf="c3||c4">editar</a>
+          <a (click)="onClickList()" class="edit-button" *ngIf="c3||c4">editar</a>
           <p  class="apagado" *ngIf="!(c3||c4)">editar</p>
 
-          <a href="/booking-details" [className]="'edit-button'" *ngIf="!(c1||c2||c3||c4)">editare</a>
+          <a (click)="onClickDetails()" [className]="'edit-button'" *ngIf="!(c1||c2||c3||c4)">editare</a>
           <p  class="apagado" *ngIf="(c1||c2||c3||c4)">editar</p>
 
           <p  class="apagado" >editar</p>
