@@ -18,14 +18,17 @@ export class DetailsViewComponent implements OnInit {
   constructor(private listing: CarListingService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.carInstance.imagepath);
-    this.route.queryParams.subscribe((a: any) => {
-      this.bookingModel.address = a.address;
-      this.bookingModel.date = a.date;
-      this.bookingModel.vehicle_type = a.vehicle_type;
-      this.bookingModel.carJson = a.carJson;
-    });
-    this.carInstance = JSON.parse(this.bookingModel.carJson);
+    try {
+      this.route.queryParams.subscribe((a: any) => {
+        this.bookingModel.address = a.address;
+        this.bookingModel.date = a.date;
+        this.bookingModel.vehicle_type = a.vehicle_type;
+        this.bookingModel.carJson = a.carJson;
+      });
+      this.carInstance = JSON.parse(this.bookingModel.carJson);
+    } catch (error) {
+      
+    }
   }
 
   btnGoToList() : void{
