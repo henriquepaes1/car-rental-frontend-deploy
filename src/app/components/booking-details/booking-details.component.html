@@ -1,33 +1,31 @@
 <div>
-  <p id="Fees-text">Fees and Aditional</p>
   <div class="flex">
     <div id="first-half">
+      <p class="thick">Fees & additional products</p>
       <div id="car-detail">
         <div id="car-detail-1">
           <img class="car-image" src="http://localhost:8080/images?fileName={{carInstance.imagepath}}">
-          <p id="bmw-text">BMW Series 5</p>
-
+          <p class="thick">BMW Series 5</p>
         </div>
         <div class="offers">
-          <div id="stardard-offer">
-            <p id="stand-text">Standard Offer</p>
-            <div class="flex">
-              <p id="price">$200</p>
-              <!-- <img class="checkmark" src="assets/check-image.png"  height="15" > -->
+          <div id="stardard-offer" style="height: 130px;">
+            <p id="stand-text" style="font-weight: bold; font-size: medium;">Standard Offer</p>
+            <div class="flex" style="margin-top: 10px;">
+              <p id="price" style="margin-left: 25px;">$200</p>
               <div id="content-text">
                 <p id="content-1">Open km</p>
                 <p id="content-1">Chargeless withdrawal within 24 hours of pick-up</p>
               </div>
             </div>
           </div>
-          <div id="promo-offer">
-            <p id="stand-text">Promo Offer</p>
-            <div class="flex">
-              <p id="price">$200</p>
+          <div id="promo-offer" style="height: 150px;">
+            <p id="stand-text" style="font-weight: bold; font-size: medium; color: rgb(61, 61, 61);">Promo Offer</p>
+            <div class="flex" style="margin-top: 10px;">
+              <p id="price" style="color: rgb(61, 61, 61); margin-left: 25px;">$200</p>
               <div id="content-text">
-                <p id="content-1">Aditional Daily Discount</p>
-                <p id="content-1">Open km</p>
-                <p id="content-1">Chargeless withdrawal within 24 hours of pick-up</p>
+                <p id="content-1" style="color: rgb(61, 61, 61);">Aditional Daily Discount</p>
+                <p id="content-1" style="color: rgb(61, 61, 61);">Open km</p>
+                <p id="content-1" style="color: rgb(61, 61, 61);">Chargeless withdrawal within 24 hours of pick-up</p>
               </div>
             </div>
           </div>
@@ -35,56 +33,56 @@
       </div>
       <div id="extra-checks">
         <div id="check-text">
-          <p id="secure-text">Car Protection</p>
-          <p>$10/day</p>
+          <p style="margin-bottom: 0px;">Car Protection</p>
+          <p style="margin-bottom: 0px;">$10/day</p>
         </div>
         <input type="checkbox" (click)="updateStatus()" id="checkbox" name="car-protection">
       </div>
       <div id="extra-checks">
         <div id="check-text">
-          <p id="secure-text">Full Protection</p>
-          <p>$20/day</p>
+          <p style="margin-bottom: 0px;">Full Protection</p>
+          <p style="margin-bottom: 0px;">$20/day</p>
         </div>
         <input type="checkbox" id="checkbox" (click)="updateStatus()" name="full-protection">
       </div>
       <div id="extra-checks">
         <div id="check-text">
-          <p id="secure-text">Third Party Protection</p>
-          <p>$5/day</p>
+          <p style="margin-bottom: 0px;">Third Party Protection</p>
+          <p style="margin-bottom: 0px;">$5/day</p>
         </div>
         <input type="checkbox" id="checkbox" (click)="updateStatus()" name="tp-protection">
       </div>
       <div id="extra-checks">
         <div id="check-text">
-          <p id="secure-text">Glass Protection</p>
-          <p>$2/day</p>
+          <p style="margin-bottom: 0px;">Glass Protection</p>
+          <p style="margin-bottom: 0px;">$2/day</p>
         </div>
         <input type="checkbox" id="checkbox" (click)="updateStatus()" name="glass-protection">
       </div>
 
     </div>
 
-    <div id="Booking-sumary">
+    <div id="Booking-sumary" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
       <div id="booking-top">
-        <p id="booking">Booking Sumary</p>
+        <p class="thick" style="padding-top: 6%; color: white;">Booking Sumary</p>
       </div>
       <div id="info-1">
-        <p id="subtitulo">Withdrawal</p>
-        <p id="subtexto">{{months[initialDate.getMonth()]}} {{initialDate.getUTCDate()}}, {{initialDate.getFullYear()}} at 8:00 am</p>
+        <p class="thick">Withdrawal</p>
+        <p>{{months[initialDate.getMonth()]}} {{initialDate.getUTCDate()}}, {{initialDate.getFullYear()}} at 8:00 am</p>
         <p id="texto-claro">{{booking.address}}</p>
       </div>
       <div id="info-2">
-        <p id="subtitulo">Devolution</p>
-        <p id="subtexto">{{months[finalDate.getMonth()]}} {{finalDate.getUTCDate()}}, {{finalDate.getFullYear()}} at 8:00 am</p>
+        <p class="thick">Devolution</p>
+        <p>{{months[finalDate.getMonth()]}} {{finalDate.getUTCDate()}}, {{finalDate.getFullYear()}} at 8:00 am</p>
         <p id="texto-claro">{{booking.address}}</p>
       </div>
       <div id="info-2" style="margin-bottom:0">
-        <p id="subtitulo">Standard Offer</p>
+        <p class="thick">Standard Offer</p>
 
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Daily Fee</th>
+              <th scope="col" style="font-weight: bold; font-size: medium;" >Daily Fee</th>
               <th scope="col"></th>
               <th scope="col" id="value">${{bookingDuration * carRent}}</th>
             </tr>
@@ -101,7 +99,7 @@
         <table class="table" *ngIf="extras">
           <thead>
             <tr>
-              <th scope="col">Extras</th>
+              <th scope="col" style="font-weight: bold; font-size: medium;">Extras</th>
               <th scope="col"></th>
               <th scope="col" id="value">${{extrasValue}}</th>
             </tr>
@@ -140,8 +138,8 @@
           </thead>
         </table>
 
-        <div id="pay-button">
-          <button type="submit" id="button">PAY</button>
+        <div>
+          <button class="btn btn-primary btn-block blue-btn thick" style="margin: 0px; margin-top: 12px; margin-bottom: 12px;">Pay</button>
         </div>
     </div>
   </div>

@@ -34,13 +34,13 @@ export class DetailsViewComponent implements OnInit {
   btnGoToList() : void{
     this.router.navigate(['/list'],{
       queryParams: this.bookingModel
-    });
+    }).then(() => {window.location.reload();});
   }
 
   btnGoToBookingDetails() : void{
     this.router.navigate(['/booking-details'],{
       queryParams: this.bookingModel
-    });
+    }).then(() => {window.location.reload();});
   }
 
 }

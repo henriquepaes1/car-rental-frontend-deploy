@@ -56,9 +56,7 @@ export class DataGatheringViewComponent implements OnInit {
     }
     if(isValid){
       this.bookingModel.date = element.value;
-      this.router.navigate(['/list'],{
-        queryParams: this.bookingModel
-      });
+      this.router.navigate(['/list'],{queryParams: this.bookingModel}).then(() => {window.location.reload();});
     }
   }
 }

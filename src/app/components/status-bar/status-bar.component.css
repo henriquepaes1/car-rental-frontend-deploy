@@ -27,8 +27,8 @@
   .stepper-item::before {
     position: absolute;
     content: "";
-    border-bottom: 2px solid #ccc;
-    border-top: 2px solid #ccc;
+    border-bottom: 2px solid rgb(175, 175, 175);
+    border-top: 2px solid rgb(175, 175, 175);
     width: 100%;
     top: 20px;
     left: -50%;
@@ -38,8 +38,8 @@
   .stepper-item::after {
     position: absolute;
     content: "";
-    border-bottom: 2px solid #ccc;
-    border-top: 2px solid #ccc;
+    border-bottom: 2px solid rgb(175, 175, 175);
+    border-top: 2px solid rgb(175, 175, 175);
     width: 100%;
     top: 20px;
     left: 50%;
@@ -55,8 +55,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #ccc;
+    background: rgb(175, 175, 175);
     margin-bottom: 6px;
+    color: white;
   }
   
   .stepper-item.active {
@@ -98,7 +99,7 @@
     position: absolute;
     width:3px;
     height:9px;
-    background-color:#ccc;
+    background-color:rgb(175, 175, 175);
     left:11px;
     top:6px;
 }
@@ -107,7 +108,7 @@
     position: absolute;
     width:3px;
     height:3px;
-    background-color:#ccc;
+    background-color:rgb(175, 175, 175);
     left:8px;
     top:12px;
 }
@@ -124,7 +125,12 @@
 .edit-button{
   color:#4bb543;
   text-decoration: underline;
+  cursor: pointer;
 }
 .apagado{
   color: #0074B7;
+}
+
+.step-name{
+  color: white;
 }

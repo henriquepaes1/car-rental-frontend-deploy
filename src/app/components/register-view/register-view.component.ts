@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from 'src/app/models/user-model';
-import { UserRegisterService } from 'src/app/services/user-register.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,21 +10,33 @@ import { Router } from '@angular/router';
 })
 export class RegisterViewComponent implements OnInit {
 
-  constructor(private router: Router, private userRegisterService: UserRegisterService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
   onSubmit(forms: any): void {
+    // Get accounts registered from local storage
+    let userArray = JSON.parse(localStorage.getItem('userArray') || '{}');
+    let isEmpty = Object.keys(userArray).length === 0;
+    if(isEmpty) userArray = new Array<User>();
+
+    // Verify if the account is already registered and if not register it
     let user = new User();
     user.email = forms.email;
     user.password = forms.password;
-    this.userRegisterService.registerUser(user);
-    this.router.navigate(['']);
-    console.log("Usuário:");
-    console.log(user);
-    console.log("Está registrado:");
-    console.log(this.userRegisterService.isRegistered(user));
+    let isRegistered = false;
+    for(let i = 0; i < userArray.length; i++){
+      if(user.email == userArray[i].email && user.password == userArray[i].password){
+        isRegistered = true;
+      }
+    }
+    if(isRegistered == false && user.email != "" && user.password != ""){
+      userArray.push(user);
+      this.router.navigate(['']);
+      localStorage.setItem('userArray', JSON.stringify(userArray));
+    }
+    else alert("Please inform your email adress and password to register")
   }
 }

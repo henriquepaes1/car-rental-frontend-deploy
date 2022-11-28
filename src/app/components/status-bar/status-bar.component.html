@@ -6,7 +6,7 @@
           'completed': (c2 || c3 || c4)
         }">
           <div class="step-counter">1</div>
-          <div class="step-name">Local e Data da Reserva</div>
+          <div class="step-name">Place & date</div>
         </div>
         <div [ngClass]="{
           'stepper-item': true,
@@ -14,34 +14,34 @@
           'completed': (c4)
               }">
           <div class="step-counter">2</div>
-          <div class="step-name">Seleção do Carro</div>
+          <div class="step-name">Car selection</div>
         </div>
         <div [ngClass]="{
           'stepper-item': true,
           'active': c4
         }" >
           <div class="step-counter">3</div>
-          <div class="step-name">Produtos Adicionais</div>
+          <div class="step-name">Additional products</div>
         </div>
         <div class="stepper-item">
           <div class="step-counter">4</div>
-          <div class="step-name">Pagamento</div>
+          <div class="step-name">Payment</div>
         </div>
 
       </div>
 
       <div class="edit">
         <div class="stepper-wrapper">
-          <a (click)="onClickDataGathering()" class="edit-button" *ngIf="c2||c3||c4">editar</a>
-          <p  class="apagado" *ngIf="!(c2||c3||c4)">editar</p>
+          <a (click)="onClickDataGathering()" class="edit-button thick" *ngIf="c2||c3||c4">Edit</a>
+          <p  class="apagado thick" *ngIf="!(c2||c3||c4)">Edit</p>
           
-          <a (click)="onClickList()" class="edit-button" *ngIf="c3||c4">editar</a>
-          <p  class="apagado" *ngIf="!(c3||c4)">editar</p>
+          <a (click)="onClickList()" class="edit-button thick" *ngIf="c3||c4">Edit</a>
+          <p  class="apagado thick" *ngIf="!(c3||c4)">Edit</p>
 
-          <a (click)="onClickDetails()" [className]="'edit-button'" *ngIf="!(c1||c2||c3||c4)">editare</a>
-          <p  class="apagado" *ngIf="(c1||c2||c3||c4)">editar</p>
+          <a (click)="onClickDetails()" [className]="'edit-button'" *ngIf="!(c1||c2||c3||c4)">Edit</a>
+          <p  class="apagado thick" *ngIf="(c1||c2||c3||c4)">Edit</p>
 
-          <p  class="apagado" >editar</p>
+          <p  class="apagado thick">Edit</p>
 
           
         </div>

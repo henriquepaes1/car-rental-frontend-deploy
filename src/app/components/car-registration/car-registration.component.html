@@ -1,15 +1,15 @@
 <form ngForm #f="ngForm" (ngSubmit)="submit(f.value);" class="container-xl container" style="margin: 0px; border: 0px; padding: 0px; max-width: none;">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="">Model</label>
-            <input required ngModel name="model" #model="ngModel" type="text" class="form-control">
+            <label class="thick">Model</label>
+            <input required ngModel name="model" #model="ngModel" type="text" class="form-control text-input">
             <div class="alert alert-danger" *ngIf="model.touched && !model.valid">
                 <div *ngIf="model.errors?.['required']">Model is required</div>
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label for="">Maker</label>
-            <input required ngModel name="make" #make="ngModel" type="text" class="form-control">
+            <label class="thick">Maker</label>
+            <input required ngModel name="make" #make="ngModel" type="text" class="form-control text-input">
             <div class="alert alert-danger" *ngIf="make.touched && !make.valid">
                 <div *ngIf="make.errors?.['required']">Maker is required</div>
             </div>
@@ -17,15 +17,15 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="">Price/day</label>
-            <input required ngModel name="rent" #rent="ngModel" type="text" class="form-control">
+            <label class="thick">Price/day</label>
+            <input required ngModel name="rent" #rent="ngModel" type="text" class="form-control text-input">
             <div class="alert alert-danger" *ngIf="rent.touched && !rent.valid">
                 <div *ngIf="rent.errors?.['required']">Price is required</div>
             </div>
         </div>
         <div class="form-group col-md-4">
-            <label for="">Type</label>
-            <select required ngModel name="type" #type="ngModel" class="form-control" >
+            <label class="thick">Type</label>
+            <select required ngModel name="type" #type="ngModel" class="form-control text-input" >
                 <option>luxury</option>
                 <option>premium</option>
                 <option>economy</option>
@@ -36,36 +36,36 @@
             </div>
         </div>
         <div class="form-group col-md-4">
-            <label for="">Color</label>
-            <input ngModel name="color" #color="ngModel" type="text" class="form-control">
+            <label class="thick">Color</label>
+            <input ngModel name="color" #color="ngModel" type="text" class="form-control text-input">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="">Transmission type</label>
-            <input ngModel name="transmission" #transmission="ngModel" type="text" class="form-control">
+            <label class="thick">Transmission type</label>
+            <input ngModel name="transmission" #transmission="ngModel" type="text" class="form-control text-input">
         </div>
         <div class="form-group col-md-4">
-            <label for="">Horsepower</label>
-            <input ngModel name="horsepower" #horse="ngModel" type="text" class="form-control" id="inputZip">
+            <label class="thick">Horsepower</label>
+            <input ngModel name="horsepower" #horse="ngModel" type="text" class="form-control text-input" id="inputZip">
         </div>
         <div class="form-group col-md-4">
-            <label for="">Acceleration</label>
-            <input ngModel name="acceleration" #acceleration="ngModel" type="text" class="form-control">
+            <label class="thick">Acceleration</label>
+            <input ngModel name="acceleration" #acceleration="ngModel" type="text" class="form-control text-input">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="">Consumption</label>
-            <input ngModel name="consumption" #consumption="ngModel" type="text" class="form-control">
+            <label class="thick">Consumption</label>
+            <input ngModel name="consumption" #consumption="ngModel" type="text" class="form-control text-input">
         </div>
         <div class="form-group col-md-4">
-            <label for="">Trunk size</label>
-            <input ngModel name="trunk" #trunk="ngModel" type="text" class="form-control" id="inputZip">
+            <label class="thick">Trunk size</label>
+            <input ngModel name="trunk" #trunk="ngModel" type="text" class="form-control text-input" id="inputZip">
         </div>
         <div class="form-group col-md-4">
-            <label for="">Seats</label>
-            <select required ngModel name="seats" #seats="ngModel" class="form-control" id="exampleFormControlSelect1">
+            <label class="thick">Seats</label>
+            <select required ngModel name="seats" #seats="ngModel" class="form-control text-input" id="exampleFormControlSelect1">
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
@@ -80,11 +80,11 @@
             </div>
         </div>
     </div>
-    <label>Upload an image</label>
+    <label class="thick">Upload an image</label>
     <br>
     <input ngModel name="file" #file="ngModel" type="file" (change)="onFileSelected($event)">
     <br>
-    <div class=""row>
-        <button class="btn btn-primary btn-block blue-btn" style="margin: 0px; margin-top: 24px;" [disabled]="!f.valid">Register Car</button>
+    <div class="">
+        <button class="btn btn-primary btn-block blue-btn thick" style="margin: 0px; margin-top: 24px;" [disabled]="!f.valid">Register Car</button>
     </div> 
 <!--     <img src="http://localhost:8080/images?fileName=corsa.jpeg">  -->

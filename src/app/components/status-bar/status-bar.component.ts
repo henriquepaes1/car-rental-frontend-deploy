@@ -32,7 +32,7 @@ export class StatusBarComponent implements OnInit {
     });
     this.router.navigate(['/data_gathering'],{
       queryParams: this.bookingModel
-    });
+    }).then(() => {window.location.reload();});
   }
 
   onClickList() : void {
@@ -44,7 +44,7 @@ export class StatusBarComponent implements OnInit {
     });
     this.router.navigate(['/list'],{
       queryParams: this.bookingModel
-    });
+    }).then(() => {window.location.reload();});
   }
 
   onClickDetails() : void {
@@ -56,8 +56,6 @@ export class StatusBarComponent implements OnInit {
     });
     this.router.navigate(['/booking-details'],{
       queryParams: this.bookingModel
-    });
+    }).then(() => {window.location.reload();});
   }
-
-
 }

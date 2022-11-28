@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car-model';
-
 import { CarListingService } from 'src/app/services/car-listing.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { __values } from 'tslib';
@@ -36,9 +35,7 @@ export class ListViewComponent implements OnInit {
 
   onClickCarElement(car: Car) : void{
     this.bookingModel.carJson = JSON.stringify(car);
-    this.router.navigate(['/details'],{
-      queryParams: this.bookingModel
-    });
+    this.router.navigate(['/details'],{queryParams: this.bookingModel}).then(() => {window.location.reload();});
   }
 
   btnGoBack() : void {
@@ -46,9 +43,6 @@ export class ListViewComponent implements OnInit {
       this.carList.pop()
     }
     console.log(this.carList.length);
-    this.router.navigate(['/data_gathering'],{
-      queryParams: this.bookingModel
-    });
+    this.router.navigate(['/data_gathering'],{queryParams: this.bookingModel}).then(() => {window.location.reload();});
   }
-
 }
