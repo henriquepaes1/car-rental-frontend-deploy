@@ -5,13 +5,13 @@
       <div id="car-detail">
         <div id="car-detail-1" style="margin-bottom: 0px;">
           <img class="car-image" src="http://localhost:8080/images?fileName={{carInstance.imagepath}}">
-          <p class="thick" style="align-self: center;">BMW Series 5</p>
+          <p class="thick" style="align-self: center;">{{carInstance.make}} {{carInstance.model}}</p>
         </div>
         <div class="offers">
           <div id="stardard-offer" style="height: 130px;">
             <p id="stand-text" style="font-weight: bold; font-size: medium;">Standard Offer</p>
             <div class="flex" style="margin-top: 10px;">
-              <p id="price" style="margin-left: 25px;">$200</p>
+              <p id="price" style="margin-left: 25px;">$${{carInstance.rent}}</p>
               <div id="content-text">
                 <p id="content-1">Open km</p>
                 <p id="content-1">Chargeless withdrawal within 24 hours of pick-up</p>
