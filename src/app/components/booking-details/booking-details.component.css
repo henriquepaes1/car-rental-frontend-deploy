@@ -43,8 +43,9 @@ body{
     display: flex;
 }
 .car-image{
-    margin-left:20%;
-    width: 65%;
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 10px;
 }
 #bmw-text{
     font-weight: bold;
