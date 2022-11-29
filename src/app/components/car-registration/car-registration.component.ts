@@ -2,6 +2,7 @@ import { ImagePostingService } from '../../services/image-posting.service';
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car-model';
 import { CarRegisterService } from 'src/app/services/car-register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-registration',
@@ -13,7 +14,7 @@ export class CarRegistrationComponent implements OnInit {
   imagePostingService: ImagePostingService;
   selectedFile: File; 
 
-  constructor(registerService: CarRegisterService, imagePostingService: ImagePostingService) { 
+  constructor(private router: Router, registerService: CarRegisterService, imagePostingService: ImagePostingService) { 
     this.carRegisterService = registerService;
     this.imagePostingService = imagePostingService;
   }
@@ -45,7 +46,8 @@ export class CarRegistrationComponent implements OnInit {
     console.log(car);
 
     this.imagePostingService.postImage(this.selectedFile);
-    this.carRegisterService.registerCar(car); 
+    this.carRegisterService.registerCar(car);
+    this.router.navigate(['/car-registration']).then(() => {window.location.reload();});
   }
 
   reload(){

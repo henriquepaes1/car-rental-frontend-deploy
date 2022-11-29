@@ -16,6 +16,8 @@ export class LoginViewComponent implements OnInit {
   }
 
   onSubmit(forms: any){
+    console.log('a');
+    console.log(localStorage.getItem('userArray'));
     // Get accounts registered from local storage
     let userArray = JSON.parse(localStorage.getItem('userArray') || '{}');
     let isEmpty = Object.keys(userArray).length === 0;
