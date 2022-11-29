@@ -48,10 +48,7 @@ export class CarRegistrationComponent implements OnInit {
     this.imagePostingService.postImage(this.selectedFile);
     this.carRegisterService.registerCar(car);
     this.router.navigate(['/car-registration']).then(() => {window.location.reload();});
-  }
-
-  reload(){
-    window.location.reload();
+    alert("successfully registered car");
   }
 
 }
