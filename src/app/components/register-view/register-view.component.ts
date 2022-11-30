@@ -26,17 +26,20 @@ export class RegisterViewComponent implements OnInit {
     let user = new User();
     user.email = forms.email;
     user.password = forms.password;
+    
     let isRegistered = false;
     for(let i = 0; i < userArray.length; i++){
       if(user.email == userArray[i].email && user.password == userArray[i].password){
         isRegistered = true;
       }
     }
+    
     if(isRegistered == false && user.email != "" && user.password != ""){
       userArray.push(user);
       this.router.navigate(['']);
       localStorage.setItem('userArray', JSON.stringify(userArray));
     }
-    else alert("Please inform your email adress and password to register")
+    else if(isRegistered) alert("This email address is already in use");
+    else alert("Please inform a valid email address and password to register");
   }
 }

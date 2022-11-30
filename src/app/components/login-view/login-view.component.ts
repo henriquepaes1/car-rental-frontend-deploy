@@ -16,8 +16,6 @@ export class LoginViewComponent implements OnInit {
   }
 
   onSubmit(forms: any){
-    console.log('a');
-    console.log(localStorage.getItem('userArray'));
     // Get accounts registered from local storage
     let userArray = JSON.parse(localStorage.getItem('userArray') || '{}');
     let isEmpty = Object.keys(userArray).length === 0;
@@ -25,21 +23,19 @@ export class LoginViewComponent implements OnInit {
     
     // Verify if user is registered and navigate to apropriate path
     let user = new User();
-    let admin;
     user.email = forms.email;
     user.password = forms.password;
+    
+    let admin;
     if(forms.email == "gabrielpalassi@hotmail.com" || forms.email == "admin") admin = true;
     else admin = false;
+    
     let isRegistered = false;
     for(let i = 0; i < userArray.length; i++){
-      if(user.email == userArray[i].email && user.password == userArray[i].password){
-        isRegistered = true;
-      }
+      if(user.email == userArray[i].email && user.password == userArray[i].password) isRegistered = true;
     }
     if(isRegistered){
-      if(admin == true) {
-        this.router.navigate(['/car-registration']);
-      }
+      if(admin) this.router.navigate(['/car-registration']);
       else this.router.navigate(['/data_gathering']).then(() => {window.location.reload();});
     }
     else alert("Invalid username/password");
