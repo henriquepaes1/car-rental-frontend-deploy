@@ -40,8 +40,8 @@ export class CarRegistrationComponent implements OnInit {
     car.seats = <number>forms.seats;
     car.trunk = <number>forms.trunk;
     car.consumption = <number>forms.consumption;
-    let path = (<string>forms.file).split("\\");
-    car.imagepath = path[path.length - 1]
+    let path = (<string>forms.file).split("\\"); // file name is last index of path
+    car.imagepath = path[path.length - 1] 
     console.log(path);
     console.log(car);
 
