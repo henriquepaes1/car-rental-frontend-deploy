@@ -10,7 +10,7 @@ export class CarRegisterService {
   constructor(private http: HttpClient) {}
 
   registerCar(car: Car){
-    this.http.post<Car>("http://localhost:8080/car-creation/add-car", car).subscribe(
+    this.http.post<Car>("https://car-rental-backend-deploy-production.up.railway.app/car-creation/add-car", car).subscribe(
       (response) => {});
   }
 }

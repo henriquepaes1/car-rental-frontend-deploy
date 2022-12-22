@@ -14,7 +14,9 @@ export class CarListingService {
 
   listCars(carType: string){
     const params = new HttpParams().set("type", carType);
-    const backendURL = 'http://localhost:8080/car-listing/by-type';
+     // const backendURL = 'http://localhost:8080/car-listing/by-type';
+
+    const backendURL = 'https://car-rental-backend-deploy-production.up.railway.app/car-listing/by-type';
 
     console.log(params);
 
